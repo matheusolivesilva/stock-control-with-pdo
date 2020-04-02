@@ -33,10 +33,10 @@
 			<tbody>
 				<?php foreach ($list as $row): ?>
 				<tr>
-					<td><a href="/categories-details.php" class"btn btn-link"><?php echo $line['id'] ?></a></td>
-					<td><a href="/categories-details.php" class="btn btn-link"><?php echo $line['name'] ?></a></td>	
-					<td><a href="/edit-categories.php?id=<?php echo $line['id'] ?>" class="btn btn-info">Edit</a></td>			
-					<td><a href="/delete-categories.php?id=<?php echo $line['id'] ?>" class="btn btn-danger">Delete</a></td>
+					<td><a href="/categories-details.php" class"btn btn-link"><?php echo $row['id'] ?></a></td>
+					<td><a href="/categories-details.php" class="btn btn-link"><?php echo $row['name'] ?></a></td>	
+					<td><a href="/edit-categories.php?id=<?php echo $row['id'] ?>" class="btn btn-info">Edit</a></td>			
+					<td><a href="/delete-categories.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a></td>
 				</tr>	
 			<?php endforeach ?>
 			</tbody>
