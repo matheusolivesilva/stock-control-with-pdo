@@ -10,7 +10,7 @@ class Category
     public function toList()
     {
         $query = "SELECT id, name FROM categories";
-	$connection = new PDO('mysql:host=127.0.0.1;dbname=stock', 'root', 'alura');
+	$connection = new PDO('mysql:host=127.0.0.1;dbname=stock', 'root', 'root');
 	$result = $connection->query($query);
 	$list = $result->fetchAll();
 
