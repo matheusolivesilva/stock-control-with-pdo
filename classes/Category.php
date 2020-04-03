@@ -1,5 +1,5 @@
 <?php
-
+require_once 'classes/Connection.php';
 class Category
 {
    
@@ -10,7 +10,7 @@ class Category
     public function toList()
     {
         $query = "SELECT id, name FROM categories";
-	$connection = new PDO('mysql:host=127.0.0.1;dbname=stock', 'root', 'root');
+	$connection = Connection::getConnection();
 	$result = $connection->query($query);
 	$list = $result->fetchAll();
 
@@ -20,7 +20,7 @@ class Category
     public function insert()
     {
         $query = "INSERT INTO categories (name) VALUES('". $this->name . "')";
-	$connection = new PDO('mysql:host=127.0.0.1;dbname=stock', 'root', 'root');
+	$connection = Connection::getConnection();
 	$connection->exec($query);
     }
 
