@@ -7,6 +7,14 @@ class Category
     public $id;
     public $name;
 
+    public function __construct($id = false)
+    {
+        if ($id) {
+	    $this->id = $id;
+	    $this->load();
+        }
+    }
+
     public function toList()
     {
         $query = "SELECT id, name FROM categories";
@@ -24,7 +32,7 @@ class Category
 	$result = $connection->query($query);
 	$list = $result->fetchAll();
 	foreach ($list as $row) {
-            return $row;
+            $this->name = $row['name'];
 	}
     }
   

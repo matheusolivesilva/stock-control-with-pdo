@@ -1,10 +1,8 @@
 <?php require_once 'header.php' ?>
 <?php require_once 'classes/Category.php' ?>
 <?php
-    $category = new Category();
     $id = $_GET['id'];
-    $category->id = $id;
-    $result = $category->load();
+    $category = new Category($id);
 ?>
 
 <div class="row">
@@ -17,7 +15,7 @@
 		<div class="col-md-6 col-md-offset-3">
 			<div class="form-group">
 				<label for="name"> Category Name</label>
-				<input type="text" value="<?php echo $result['name']?>" class="form-control" placeholder="Category Name">
+				<input type="text" value="<?php echo $category->name ?>" class="form-control" placeholder="Category Name">
 			</div>
 			<input type="submit" class="btn btn-success btn-block" value="Save">
 		</div>
