@@ -17,6 +17,17 @@ class Category
 	return $list;
     }
 
+    public function load()
+    {
+        $query = "SELECT id, name FROM categories WHERE id = " . $this->id;
+	$connection = Connection::getConnection();
+	$result = $connection->query($query);
+	$list = $result->fetchAll();
+	foreach ($list as $row) {
+            return $row;
+	}
+    }
+  
     public function insert()
     {
         $query = "INSERT INTO categories (name) VALUES('". $this->name . "')";
@@ -25,5 +36,10 @@ class Category
     }
 
 
-       
+    public function update()
+    {
+        $query = "UPDATE categories SET name = '" . $this->nome . "' WHERE id = " . $this->id;
+        $connection = Connection::getConnection();
+	$connection->exec($query);
+    }
 }
