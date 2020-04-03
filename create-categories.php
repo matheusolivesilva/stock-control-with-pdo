@@ -1,4 +1,4 @@
-<?php require_once 'header.php';
+<?php require_once 'header.php' ?>
 
 <div class="row">
 
@@ -7,7 +7,7 @@
 	</div>
 </div>
 
-<form action="#" method="post">
+<form action="create-categories-post.php" method="post">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="form-group">

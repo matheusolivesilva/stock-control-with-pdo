@@ -15,6 +15,15 @@ class Category
 	$list = $result->fetchAll();
 
 	return $list;
-    }	
+    }
+
+    public function insert()
+    {
+        $query = "INSERT INTO categories (name) VALUES('". $this->name . "')";
+	$connection = new PDO('mysql:host=127.0.0.1;dbname=stock', 'root', 'root');
+	$connection->exec($query);
+    }
+
+
        
 }
