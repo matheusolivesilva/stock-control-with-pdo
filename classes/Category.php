@@ -46,7 +46,7 @@ class Category
 
     public function update()
     {
-        $query = "UPDATE categories SET name = '" . $this->nome . "' WHERE id = " . $this->id;
+        $query = "UPDATE categories SET name = '" . $this->name . "' WHERE id = " . $this->id;
         $connection = Connection::getConnection();
 	$connection->exec($query);
     }
