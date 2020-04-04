@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'classes/Category.php';
+    require_once 'global.php';
 
     $category = new Category();
     $name = $_POST['name'];

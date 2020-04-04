@@ -1,5 +1,5 @@
 <?php require_once 'header.php' ?>
-<?php require_once 'classes/Category.php' ?>
+<?php require_once 'global.php' ?>
 <?php
     $id = $_GET['id'];
     $category = new Category($id);
