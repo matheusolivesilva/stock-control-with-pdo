@@ -1,8 +1,12 @@
 <?php require_once 'global.php' ?>
 
 <?php
-    $category = new Category();
-    $list = $category->toList();
+    try {
+        $category = new Category();
+        $list = $category->toList();
+    } catch(Exception $error) {
+        ErrorMessage::handleError($error);
+    }
 ?>
 
 <?php require_once 'header.php' ?>

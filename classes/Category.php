@@ -17,7 +17,7 @@ class Category
 
     public function toList()
     {
-        $query = "SELECT id, name FROM categories";
+	$query = "SELECT id, name FROM categories";
 	$connection = Connection::getConnection();
 	$result = $connection->query($query);
 	$list = $result->fetchAll();

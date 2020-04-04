@@ -1,11 +1,15 @@
 <?php require_once 'global.php'; ?>
 
 <?php
-    $id = $_POST['id'];
-    $name = $_POST['name'];
+    try{
+        $id = $_POST['id'];
+        $name = $_POST['name'];
 
-    $category = new Category($id);
-    $category->name = $name;
-    $category->update();
+        $category = new Category($id);
+        $category->name = $name;
+        $category->update();
     
-    header('Location: categories.php');
+        header('Location: categories.php');
+    } catch(Exception $error) {
+        ErrorMessage::handleError($error);
+    }

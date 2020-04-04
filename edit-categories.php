@@ -1,8 +1,12 @@
 <?php require_once 'header.php' ?>
 <?php require_once 'global.php' ?>
 <?php
-    $id = $_GET['id'];
-    $category = new Category($id);
+    try {
+        $id = $_GET['id'];
+        $category = new Category($id);
+    } catch(Exception $error) {
+        ErrorMessage::handleError($error);
+    }
 ?>
 
 <div class="row">
