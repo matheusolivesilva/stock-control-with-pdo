@@ -50,4 +50,11 @@ class Category
         $connection = Connection::getConnection();
 	$connection->exec($query);
     }
+
+    public function delete()
+    {
+        $query = "DELETE FROM categories WHERE id = " . $this->id;
+	$connection = Connection::getConnection();
+	$connection->exec($query);
+    }
 }
