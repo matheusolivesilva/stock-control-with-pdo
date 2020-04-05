@@ -41,7 +41,7 @@
 				<tr>
 					<td><?php echo $row['id'] ?></td>
 					<td><?php echo $row['name'] ?></td>
-					<td><?php echo $row['price'] ?></td>
+					<td>R$<?php echo number_format($row['price'], 2, ",", ".") ?></td>
 					<td><?php echo $row['quantity'] ?></td>
 					<td><?php echo $row['category_name'] ?> </td>
 					<td><a href="/edit-products.php?id=<?php echo $row['id'] ?>" class="btn btn-info">Edit</a></td>
