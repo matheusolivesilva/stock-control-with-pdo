@@ -1,5 +1,4 @@
 <?php
-require_once 'classes/Connection.php';
 class Category
 {
    
