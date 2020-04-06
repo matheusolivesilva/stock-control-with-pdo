@@ -20,4 +20,12 @@ class Product
 	$list = $result->fetchAll();
 	return $list;
     }
+
+    public function insert()
+    {
+        $query = "INSERT INTO products (name, price, quantity, category_id) 
+                            VALUES ('". $this->name . " ', " . $this->price . ", " . $this->quantity . ", " . $this->category_id . ")";
+        $connection = Connection::getConnection();
+	$connection->exec($query);
+    }
 }
