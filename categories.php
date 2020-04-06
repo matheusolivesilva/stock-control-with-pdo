@@ -2,8 +2,7 @@
 
 <?php
     try {
-        $category = new Category();
-        $list = $category->toList();
+        $list = Category::toList();
     } catch(Exception $error) {
         ErrorMessage::handleError($error);
     }
