@@ -12,7 +12,7 @@
 	$product->name = $name;
 	$product->quantity = $quantity;
 	$product->price = $price;
-	$product->category_id = $category_id;
+	$product->category = $category_id;
 	$product->insert();
 
 	header('Location: products.php');

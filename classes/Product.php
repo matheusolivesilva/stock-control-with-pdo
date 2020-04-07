@@ -24,8 +24,13 @@ class Product
     public function insert()
     {
         $query = "INSERT INTO products (name, price, quantity, category_id) 
-                            VALUES ('". $this->name . " ', " . $this->price . ", " . $this->quantity . ", " . $this->category_id . ")";
+   VALUES (:name, :price, :quantity, :category_id)";
         $connection = Connection::getConnection();
-	$connection->exec($query);
+	$stmt = $connection->prepare($query);
+	$stmt->bindValue(':name', $this->name);
+	$stmt->bindValue(':price', $this->price);
+	$stmt->bindValue(':quantity', $this->quantity);
+	$stmt->bindValue(':category_id', $this->category);
+	$stmt->execute();
     }
 }
