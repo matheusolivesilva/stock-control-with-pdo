@@ -10,7 +10,7 @@ class ErrorMessage
             print_r($error);
             echo '</pre>';
         } else {
-            echo $e->getMessage();
+            echo $error->getMessage();
         }
         exit;
     }
