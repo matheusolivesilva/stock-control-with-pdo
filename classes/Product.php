@@ -67,4 +67,13 @@ class Product
 	$stmt->bindValue(':id', $this->id);
 	$stmt->execute();
     }   
+    
+    public function delete()
+    {
+        $query = "DELETE FROM products WHERE id = :id";
+	$connection = Connection::getConnection();
+	$stmt = $connection->prepare($query);
+	$stmt->bindValue(':id', $this->id);
+	$stmt->execute();
+    }
 }
