@@ -54,4 +54,17 @@ class Product
 	$stmt->bindValue(':category_id', $this->category);
 	$stmt->execute();
     }
+
+    public function update()
+    {
+        $query = "UPDATE products SET name = :name, price = :price, quantity = :quantity, category_id = :category_id WHERE id = :id";
+	$connection = Connection::getConnection();
+	$stmt = $connection->prepare($query);
+	$stmt->bindValue(':name', $this->name);
+	$stmt->bindValue(':price', $this->price);
+	$stmt->bindValue(':quantity', $this->quantity);
+	$stmt->bindValue(':category_id', $this->category);
+	$stmt->bindValue(':id', $this->id);
+	$stmt->execute();
+    }   
 }

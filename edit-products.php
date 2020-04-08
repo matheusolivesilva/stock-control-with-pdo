@@ -1,8 +1,12 @@
 <?php require_once 'global.php' ?>
 <?php
-    $id = $_GET['id'];
-    $product = new Product($id);
-    $listCategories = Category::toList();
+    try {
+        $id = $_GET['id'];
+        $product = new Product($id);
+        $listCategories = Category::toList();
+    } catch(Exception $error) {
+        ErrorMessage::handleError($error);
+    }
 ?>
 <?php require_once 'header.php' ?>
 
@@ -13,7 +17,8 @@
 </div>
 
 
-<form action="#" method="post">
+<form action="edit-products-post.php" method="post">
+	<input type="hidden" name="id" value="<?php echo $product->id ?>">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="form-group">
