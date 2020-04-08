@@ -8,6 +8,27 @@ class Product
     public $quantity;
     public $category;
 
+    public function __construct($id = false)
+    {
+        if ($id) {
+            $this->id = $id;
+	    $this->load();
+	}
+    }
+
+    public function load()
+    {
+        $query = "SELECT name, price, quantity, category_id FROM products WHERE id = :id";
+	$connection = Connection::getConnection();
+	$stmt = $connection->prepare($query);
+	$stmt->bindValue(':id', $this->id);
+	$stmt->execute();
+	$row = $stmt->fetch();
+	$this->name = $row['name'];
+	$this->price = $row['price'];
+	$this->quantity = $row['quantity'];
+	$this->category = $row['category_id'];
+    }
     public static function toList()
     {
         $query = "SELECT p.id, p.name, price, quantity, category_id, c.name as category_name
