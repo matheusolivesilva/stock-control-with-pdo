@@ -45,7 +45,7 @@
 					<td><?php echo $row['quantity'] ?></td>
 					<td><?php echo $row['category_name'] ?> </td>
 					<td><a href="/edit-products.php?id=<?php echo $row['id'] ?>" class="btn btn-info">Edit</a></td>
-					<td><a href="/delete-products.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a></td>
+					<td><a href="/delete-products-post.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a></td>
 				</tr>
 			<?php endforeach ?>
 			</tbody>
