@@ -1,3 +1,15 @@
+<?php require_once 'global.php' ?>
+<?php
+    try {
+        $id = $_GET['id'];
+	$category = new Category($id);
+	$category->loadProducts();
+	$listProducts = $category->products;
+    } catch (Exception $error) {
+        ErrorMessage::handleError($error);
+    }
+?>
+
 <?php require_once 'header.php' ?>
 <div class="row">
 	<div class="col-md-12">
@@ -8,16 +20,21 @@
 
 <dl>
 	<dt>ID</dt>
-	<dd>1</dd>
+	<dd><?php echo $category->id ?></dd>
 	<dt>Name</dt>
-	<dd>Books</dd>
+	<dd><?php echo $category->name ?></dd>
 	<dt>Products</dt>
+	<?php if (count($listProducts) > 0): ?>
 	<dd>
 		<ul>
-			<li><a href="/edit-products.php">The Lord Of Rings</a></li>
-			<li><a href="/edit-products.php">The hitchhiker's guide to the galaxy</a></li>
+		    <?php foreach($listProducts as $row): ?>
+			<li><a href="/edit-products.php?id=<?php echo $row['id'] ?>"><?php echo $row['name'] ?></a></li>
+		    <?php endforeach ?>
 		</ul>
 	</dd>
+	<?php else: ?>
+	<dd>There are no products for this category</dd>
+	<?php endif ?>
 </dl>
 
 <?php require_once 'footer.php' ?>

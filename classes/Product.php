@@ -76,4 +76,14 @@ class Product
 	$stmt->bindValue(':id', $this->id);
 	$stmt->execute();
     }
+
+    public static function listByCategory($category_id) 
+    {
+        $query = "SELECT id, name, price, quantity FROM products WHERE category_id = :category_id";
+	$connection = Connection::getConnection();
+	$stmt = $connection->prepare($query);
+	$stmt->bindValue(':category_id', $category_id);
+	$stmt->execute();
+	return $stmt->fetchAll();
+    }
 }

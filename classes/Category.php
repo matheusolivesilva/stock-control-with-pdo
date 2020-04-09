@@ -5,6 +5,7 @@ class Category
 
     public $id;
     public $name;
+    public $products;
 
     public function __construct($id = false)
     {
@@ -63,5 +64,10 @@ class Category
 	$stmt = $connection->prepare($query);
 	$stmt->bindValue(':id',$this->id);
 	$stmt->execute();
+    }
+
+    public function loadProducts()
+    {
+        $this->products = Product::listByCategory($this->id);        
     }
 }
