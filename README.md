@@ -21,12 +21,12 @@ Installing this system it's pretty easy, just follow the step by step bellow:
 1. First of all, clone or download this repo
 2. Go to the system's directory, open the file 'classes/config.php' and replace the values with yours credentials
 3. Run the database script 'database,sql' in your MySQL
-4. Run the system with ````bash php -S localhost:yourporthere/ ```` 
+4. Run the system with ````php -S localhost:yourporthere/ ```` 
 5. Enjoy ;)
 
 ## Running Tests
 
-I've created some simple tests, just to ensure that this project is running correctly, to use them, just run the files 'robot\_edit.php' and the 'robot\_delete.php' in your local server.
+I've created some simple tests, just to ensure that this project is running correctly, to use them, just run the files 'robot.php', 'robot\_edit.php' and the 'robot\_delete.php' in your local server.
 
 ## Built With
 
