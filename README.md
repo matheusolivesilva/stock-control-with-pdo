@@ -1,4 +1,4 @@
-# Stock System Control
+# System Control With PDO
 
 This project was created during a course at [Alura](https://alura.com.br) as a part of PHP formation. Here you can see a system responsible to manage products and its categories, its amounts, prices and much more.
 
